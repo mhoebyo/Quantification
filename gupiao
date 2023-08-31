@@ -1,7 +1,10 @@
 def initialize(context):#初始化
     g.security = '002043.XSHE'# 股票名:兔宝宝
+
+
 def handle_data(context, data):#每日循环
     last_price = data[g.security].close# 取得最近日收盘价
+
     # 取得过去二十天的平均价格
     average_price = data[g.security].mavg(20, 'close')
     cash = context.portfolio.cash# 取得当前的现金
